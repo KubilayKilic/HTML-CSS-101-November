@@ -1,0 +1,150 @@
+html{
+  box-sizing: border-box; /*verilen width değerine, içeriği sığdırır. content-box gibi content width değerine göre padding vs eklemez*/
+}
+
+body{
+  font-family: sans-serif; /*body fontunu değiştirir.*/
+  color: #0a0a23; /*body font'unun rengini değiştirir.*/
+}
+
+span[class~="sr-only"] { /*class'ı yalnızca sr-only olan span elementlerini hedefler.*/
+  border: 0 !important;  /* Border'ı sıfırlar, herhangi bir kenarlık bulunmayacaktır. !important ise değer önceliğini belirtir, aşağıda başka değer alsa da !important yazan geçerli olacaktır.*/
+  clip: rect(1px, 1px, 1px, 1px) !important; /* Elementin boyutunu 1x1 ile sınırlandırır, 1 piksellik kare olacağı için ekran üzerinde görünmez*/
+  clip-path: inset(50%) !important; /* Elementin görünür bölgesininin ortadan, yarısını gizler. */
+  width: 1px !important; /* genişlik 1piksel olarak ayarlanır*/
+  height: 1px !important; /* yükseklik 1px olarak ayarlanır.*/
+  overflow: hidden !important; /* içeriğin kutunun sınırları dışına çıkmasını engeller*/
+  white-space: nowrap !important; /* beyaz boşluk karakterlerinin satır atlamasını önler, içerik tek satırda kalır.*/
+  position: absolute !important; /* mutlak konumlandırma kullanır, diğer içerikle çakışma olmaz*/
+  padding: 0 !important; /* padding'i sıfırlar.*/
+  margin: -1 !important; /* negatif margin ile elementin etrafında ekstra bir boşluk oluşmasının önüne geçer, elementi görünür alan dışına iterek gizler.*/
+  /* Sonuç olarak ekran okuyuclar için önemli bilgileri, elementleri görünmez hale getirirken, bu bilgilerin ekran okuyucularına erişilebilir olmasını sağlar.*/
+}
+
+h1{
+  max-width: 37.25rem; /*h1'in maks genişliğini default rem olan 16px'e göre oranlar 37.25x16px*/
+  margin: 0 auto; /* yukarı ve aşağı margini sıfırlar, sağ ve sol margini otomatikte bırakır bu da sağ ve sola eşit hizada olacak şekilde içeriği ortalar. */
+  padding: 1.5rem 1.25rem; /* aynı şekilde padding değerinde oynama yapılmıştır. */
+}
+
+h1 .flex{ /* h1 elementi içindeki .flex sınıfına sahip tüm elementleri hedefler */
+  display: flex; /* bir konteyneri esnek hale getirir ve düzenleme, hizalama, sıralama gibi değişikliklere imkan tanır. */
+  flex-direction: column-reverse; /* öğeleri dikey olarak tersten sıralar. */
+  gap: 1rem;
+}
+
+h1 .flex span:first-of-type{ /* h1 elementi içerisindeki .flex sınıfına ait ilk span öğesi */
+  font-size: 0.7em; /* İlk span öğesinin font boyutu 0.7em olarak ayarlanır. */
+}
+
+h1 .flex span:last-of-type{ /* h1 elementinin içindeki .flex sınıfına ait son span öğesi */
+  font-size: 1.2em; /* Son span öğesinin font boyutu 1.2em olarak ayarlanır. */
+}
+
+section{ /* section elementi */
+  max-width: 40rem; /* Maksimum genişlik 40rem olarak belirlenir. */
+  margin: 0 auto; /* Kenarlarda otomatik margin eklenerek ortalanır. */
+  border: 2px solid #d0d0d5; /* 2px kalınlığında ve belirtilen renkte sınır çizgisi eklenir. */
+}
+
+#years{ /* #years ID'li element */
+  display: flex; /* Flexbox kullanılarak içeriğin esnek hizalaması sağlanır. */
+  justify-content: flex-end; /* İçeriği sağa yaslamak için kullanılır. */
+  position: sticky; /* Yapışkan pozisyonlandırma kullanılarak belirli bir noktada sabitlenir. */
+  top: 0; /* Yapışkan elementin sayfanın üstünde sabitlenmesi sağlanır. */
+  color: #fff; /* Metin rengi beyaz olarak belirlenir. */
+  background-color: #0a0a23; /* Arka plan rengi belirlenir. */
+  z-index: 999; /* Diğer elementlerin üzerinde olacak şekilde z-index değeri belirlenir. */
+}
+
+#years span[class]{ /* #years ID'li elementin içindeki class'ı span olan elementler. */
+  font-weight: bold; /* Metin kalınlığı kalın olarak belirlenir. */
+  width: 4.5rem; /* Genişlik 4.5rem olarak ayarlanır. */
+  text-align: right; /* Metin sağa hizalanır. */
+}
+
+.table-wrap{ /* .table-wrap sınıfına sahip element */
+  padding: 0 0.75rem 1.5rem 0.75rem; /* Dört yönde padding değerleri belirlenir. Sırasıyla YukSağASol */
+}
+
+table {
+  border-collapse: collapse; /* Hücre çerçeveleri birleştirilerek sınırlar kaldırılır. */
+  border: 0; /* Sınırlar kaldırılır. */
+  width: 100%; /* Genişlik yüzde 100 olarak belirlenir. */
+  position: relative; /* Pozisyon değeri belirlenir. */
+  margin-top: 3rem; /* Üst kenara uzaklık belirlenir. */
+}
+
+table caption{ /* table elementinin caption öğesi */
+  color: #356eaf; /* Metin rengi belirlenir. */
+  font-size: 1.3em; /* Font boyutu belirlenir. */
+  font-weight: normal; /* Metin kalınlığı normal olarak belirlenir. */
+  position: absolute; /* Pozisyon değeri belirlenir. */
+  top: -2.25rem; /* Üst kenara uzaklık belirlenir. */
+  left: 0.5rem; /* Sol kenara uzaklık belirlenir. */
+}
+
+tbody td{ /* tbody elementinin td öğeleri */
+  width: 100vw;  /* Genişlik viewport genişliği kadar ayarlanır. */
+  min-width: 4rem;  /* Minimum genişlik 4rem olarak belirlenir. */
+  max-width: 4rem;  /* Maksimum genişlik 4rem olarak belirlenir. */
+}
+
+tbody th { /* tbody elementinin th öğeleri */
+  width: calc(100% - 12rem);  /* Genişlik hesaplaması yapılır. */
+}
+
+tr[class="total"]{ /* tr elementi içindeki total sınıfına sahip element */
+  border-bottom: 4px double #0a0a23;  /* Alt kenara çift çizgi eklenir. */
+  font-weight: bold;  /* Metin kalınlığı kalın olarak belirlenir. */
+}
+
+tr[class="total"] th{ /* tr.total sınıfına sahip th öğeleri */
+  text-align: left;  /* Metin sola hizalanır. */
+  padding: 0.5rem 0 0.25rem 0.5rem;  /* Dört yönde padding değerleri belirlenir. YukSaASol */
+}
+
+tr.total td{ /* tr.total sınıfına sahip td öğeleri */
+  text-align: right;  /* Metin sağa hizalanır. */
+  padding: 0 0.25rem;  /* Sağ ve sol yönde padding değerleri belirlenir. */
+}
+
+tr.total td:nth-of-type(3){ /* tr.total sınıfına sahip td öğelerinden üçüncüsüne özel padding */
+  padding: 0.5rem; /* dört yönde padding */
+}
+
+tr.total:hover{ /* tr.total sınıfına sahip tr öğeleri hover durumunda */
+  background: #99c9ff; /* Arkaplan rengi belirlenir. */
+}
+
+td.current{ /* td.current sınıfına sahip elementlerin italic stilinde olması */
+  font-style: italic; /* Metin stil olarak italic olarak belirlenir. */
+}
+
+tr.data{ /* tr.data sınıfına sahip elementlerin background-image özelliği */
+  background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem); /* Arka plan gradient efekti eklenir. */
+}
+
+tr.data th { /* tr.data sınıfına sahip th öğeleri */
+  text-align: left;  /* Metin sola hizalanır. */
+  padding-top: 0.3rem;  /* Üst kenara padding eklenir. */
+  padding-left: 0.5rem;  /* Sol kenara padding eklenir. */
+}
+
+tr.data th .description{ /* tr.data sınıfına sahip th öğelerinin içindeki .description sınıfına sahip öğeler */
+  display: block;  /* Öğeler blok olarak görüntülenir. */
+  font-style: italic;  /* Metin stil olarak italic olarak belirlenir. */
+  font-weight: normal;  /* Metin kalınlığı normal olarak belirlenir. */
+  padding: 1rem 0 0.75rem;  /* Üst, alt ve sağ yönde padding değerleri belirlenir. */
+  margin-right: -13.5rem;  /* Sağa kenara uzaklık belirlenir. */
+}
+
+tr.data td{ /* tr.data sınıfına sahip td öğeleri */
+  vertical-align: top;  /* Dikey hizalama belirlenir. */
+  text-align: right;  /* Metin sağa hizalanır. */
+  padding: 0.3rem 0.25rem 0;  /* Üst, alt ve sağ yönde padding değerleri belirlenir. */
+}
+
+tr.data td:last-of-type{ /* tr.data sınıfına sahip td öğelerinden sonuncusuna özel padding */
+  padding-right: 0.5rem; /* Sağ yönde padding değeri belirlenir. */
+}

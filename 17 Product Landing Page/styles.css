@@ -1,0 +1,394 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700';
+/* Harf tipi import ediliyor. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Tüm elementlerin dış boşluğu, iç boşluğu ve kutu modelini sıfırlar. */
+
+
+body{
+  background-color:cornsilk;
+  font-family: 'Lato', sans-serif;
+}
+/* Sayfa arka plan rengini belirler ve font ailesini ayarlar. */
+
+
+#page-wrapper {
+  position: relative;
+}
+/* Sayfa içeriğini saran ana bölgenin pozisyonunu ayarlar. */
+
+
+li {
+  list-style: none;
+}
+/* Liste öğelerinin madde işaretini veya sayısını kaldırır. */
+
+
+a{
+  color:brown;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+/* metin rengini kahverengi yapar, metni kalın yapar, metin boyutunu (16px)*1.2 yapar, normalde olan alt çizgiyi bağlantı kısmından kaldırır. Sağ üstteki menü metinlerinden. */
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* maks genişliği 1000px yapar, üst öğresine göre tam genişlikte olmasını sağlar, sol ve sağ boşlukları sıfırlar ve otomatik margin kullanarak ortalar. */
+
+.btn {
+  padding: 0 20px;
+  height: 40px;
+  font-size: 1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 3px black solid;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* üst ve alt boşlukları sıfırlar, sağ ve sol boşlukları 20px olarak belirler,
+  buton yüksekliğini 40px olarak belirler,
+  font boyutunu 1em olarak belirler, varsayılan 16px değeri,
+  metni bold yapar 900,
+  metni büyük harfe çevirir,
+  3px çizgili siyah kenarlık ekler,
+  köşe yarıçapını 2px alarak hafif yuvarlaştırır,
+  buton arkaplan rengini şeffaf yapar,
+  fare imleci buton üzerine geldiğinde el işareti oluşmasını sağlar. */
+
+.grid {
+  display: flex;
+}
+/* flex kullanarak konteyner içindeki öğelerin dikey ve yatay hizalanmalarına olanak sağlar. */
+
+header {
+  position: fixed;
+  top: 0;
+  min-height: 75px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eee;
+}
+/* başlık sabit konumda kalır, sayfa kaydırılsa da pozisyonunu korur,
+  ekranın üstüne yapıştırır,
+  min yüksekliği 75px olarak belirler,
+  içeriğin üst ve alt boşluklarını sıfırlar, sağ-sol için 20px boşluk belirler,
+  flex konteynerine imkan tanır,
+  yatayda eşit aralıklarda düzenleme sağlar,
+  öğeleri dikeyde ortalar,
+  arka plan rengini değiştirir.*/
+
+@media (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+  }
+}
+/* ekranın genişliği 600px'den küçük olduğunda, başlık öğelerinin yatayda ekrana sığmadıkları durumda bir sonraki satıra geçmelerini sağlar. */
+
+.logo {
+  width: 60vw;
+}
+/* logo genişliğini 60vw olarak belirler. */
+
+@media (max-width: 650px) {
+  .logo {
+    margin-top: 15px;
+    width: 100%;
+    position: relative;
+  }
+}
+/* ekran genişliği 650px'den düşük olduğunda,
+  üst element ile araya 15px boşluk ekler,
+  bir üst öğenenin genişliğinin tamamını almasını sağlar,
+  pozisyonu göreli olarak ayarlar, diğer öğelere göre konumlandırma yapılabilmesi için. */
+
+.logo > img {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 20px;
+}
+/* yükseklik ve genişliği üst elementten alır,
+  maks genişliği 300px olarak ayarlar,
+  konteyneri flex yaparak editlemeye imkan sağlar,
+  yatayda öğeleri ortalar
+  resmi dikeyde merkeze alır, ortalar,
+  resmin metnini yatayda merkeze alır,
+  sol taraftan 20pxlik bir boşluk bırakır.*/
+
+@media (max-width: 650px) {
+  .logo > img {
+    margin: 0 auto;
+  }
+}
+/* genişlik 650px'den küçükse,
+  resim elementini yukarı ve aşağıdan boşluk kalmayacak şekilde, yukarı ve aşağıdan 0 olacak şekilde düzenler. */
+
+nav {
+  font-weight: 400;
+}
+/* font kalınlığını 400 olarak ayarlar */
+
+@media (max-width: 650px) {
+  nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 50px;
+  }
+  nav li {
+    padding-bottom: 5px;
+  }
+}
+/* genişlik 650pxden küçük olunca,
+  yukarı margini 10px bırakır,
+  genişliği parenttan yüzde yüz alacak şekilde düzenler,
+  konteyneri esnek editlemeye açar,
+  nav öğresi elementlerini dikey olarak düzenler,
+  öğeleri dikeyde ortalar,
+  metni yatayda ortalar,
+  öğenin yukarı-aşağı iç boşluklarını sıfırlar, sol-sağa 20px bırakır,
+  li'nin padding bottomunu 5px olarak ayarlar. */
+
+nav > ul {
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+/* öğeleri yatayda düzenler,
+  konteyner öğeleri arasında eşit boşluklar bırakır */
+
+@media (max-width: 650px) {
+  nav > ul {
+    flex-direction: column;
+  }
+}
+/*  */
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 200px;
+  margin-top: 50px;
+}
+/*  */
+
+#hero > h2 {
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+/* metin uzun olursa, metinlerin kutu içerisinde kalacak şekilde kırılmalarına izin verir. */
+
+#hero input[type='email'] {
+  max-width: 275px;
+  width: 100%;
+  padding: 5px;
+}
+/*  */
+
+#hero input[type='submit'] {
+  max-width: 150px;
+  width: 100%;
+  height: 30px;
+  margin: 15px 0;
+  border: 0;
+  background-color: #f1c40f;
+}
+/*  */
+
+#hero input[type='submit']:hover {
+  background-color: orange;
+  transition: background-color 1s;
+}
+/* 1sn içerisinde background-colorın geçiş yapmasını sağlar */
+
+@media (max-width: 650px) {
+  #hero {
+    margin-top: 120px;
+  }
+}
+/*  */
+
+#features {
+  margin-top: 30px;
+}
+/*  */
+
+#features .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 125px;
+  width: 20vw;
+  color: darkorange;
+}
+/*  */
+
+@media (max-width: 550px) {
+  #features .icon {
+    display: none;
+  }
+}
+/*  */
+
+#features .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 125px;
+  width: 80vw;
+  padding: 5px;
+}
+/*  */
+
+@media (max-width: 550px) {
+  #features .desc {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    height: 150px;
+  }
+}
+/*  */
+
+@media (max-width: 650px) {
+  #features {
+    margin-top: 0;
+  }
+}
+/*  */
+
+#how-it-works {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+/*  */
+
+#how-it-works > iframe {
+  max-width: 560px;
+  width: 100%;
+}
+/*  */
+
+#pricing {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+/*  */
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 3);
+  margin: 10px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+/*  */
+
+.product > .level {
+  background-color: #ddd;
+  color: black;
+  padding: 15px 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+/*  */
+
+.product > h2 {
+  margin-top: 15px;
+}
+/*  */
+
+.product > ol {
+  margin: 15px 0;
+}
+/*  */
+
+.product > ol > li {
+  padding: 5px 0;
+}
+/*  */
+
+.product > button {
+  border: 0;
+  margin: 15px 0;
+  background-color: #f1c40f;
+  font-weight: 400;
+}
+/*  */
+
+.product > button:hover {
+  background-color: orange;
+  transition: background-color 1s;
+}
+/*  */
+
+@media (max-width: 800px) {
+  #pricing {
+    flex-direction: column;
+  }
+  .product {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+/*  */
+
+footer {
+  margin-top: 30px;
+  background-color: #ddd;
+  padding: 20px;
+}
+/*  */
+
+footer > ul {
+  display: flex;
+  justify-content: flex-end;
+}
+/*  */
+
+footer > ul > li {
+  padding: 0 10px;
+}
+/*  */
+
+footer > span {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
+  color: #444;
+}
+/*  */

@@ -1,0 +1,186 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Helvetica, sans-serif;
+  background-color: #FFF8DC;
+}
+
+#header{
+  background-color: darkred;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+  width: 34%;
+  margin: 2px 0 0px 2px;
+}
+
+#nav-bar{
+  position: absolute;
+  right: 20px;
+}
+
+ul{
+  list-style-type: none ;
+}
+
+li{
+  font-size: 1.4em;
+  font-weight: 700;
+  display: inline;
+  margin: 0 34px 0 34px;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+a:hover{
+  color: aquamarine;
+  background-color: black;
+}
+
+#quote{
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(200,200,255);
+  color: black;
+}
+
+#quote h2{
+  margin-bottom: 25px;
+  font-size: 1.6em;
+}
+
+#quote h2::after{
+  content: ' "';
+}
+
+#quote h2::before{
+  content: '" ';
+}
+
+#quote p{
+  font-size: 18px;
+  color: darkred;
+  font-weight: 600;
+}
+
+.about{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(68, 63, 63);
+}
+.greet-wrapper h1{
+  color: white;
+  font-size: 4.8rem;
+  margin-bottom: 20px;
+}
+.greet-wrapper h3{
+  color: rgb(255, 12, 12);
+}
+
+
+.work{
+  background-color: rgb(5, 119, 119);
+}
+
+.baslik{
+  color: white;
+  font-size: 2.1em;
+  margin-top: 0;
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+}
+.baslik h1{
+  margin-bottom: 12px;
+  text-decoration: underline;
+}
+.grid{
+  background-color: rgb(5, 119, 119);
+  height: 950px;
+}
+
+.ızgara{
+  display: inline-block;
+  width: auto;
+  border: 2px solid black;
+  margin: 5px;
+}
+.grid .p1, .p2, .p3, .p4, .p5, .p6{
+  background-color: darkslategray;
+  color: white;
+  text-align: center;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn{
+  background-color: gold;
+  width: 200px;
+  height: 40px;
+}
+
+.btn:hover{
+  cursor: pointer;
+}
+
+.contact{
+  background-color: darkslateblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.contact div h1{
+  font-size: 3.4rem;
+}
+.contact div p{
+  font-size: 1.2rem;
+}
+
+#icon-hub{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#pd{
+  padding: 30px;
+}
+
+#footer{
+  background-color: black;
+  color: wheat;
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  height: 25px;
+}
+#footer h4{
+  padding-right: 45px;
+}
